@@ -1,9 +1,11 @@
 import React from 'react'
 
+import AboutUs from './pages/AboutUs'
+
 const App = () => {
   return (
     <div className="App">
-      <div>Film</div>
+      <AboutUs />
     </div>
   );
 }
