@@ -3,15 +3,24 @@ import React from 'react'
 import GlobalStyle from './components/GlobalStyle'
 // Pages
 import AboutUs from './pages/AboutUs'
+import OurWork from './pages/OurWork'
+import ContactUs from './pages/ContactUs'
 
 import Nav from './components/Nav'
+
+// Router
+import { Switch, Route } from 'react-router-dom'
 
 const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <AboutUs />
+      <Switch>
+        <Route exact path="/" component={AboutUs}/>
+        <Route path="/our-work" component={OurWork}/>
+        <Route path="/contact-us" component={ContactUs}/>
+      </Switch>
     </div>
   );
 }
