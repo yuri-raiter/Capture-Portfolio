@@ -1,6 +1,8 @@
 import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+    
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lobster&display=swap');
 
     * {
         margin: 0;
@@ -9,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: #1b1b1b
+        background: #1b1b1b;
+        font-family: 'Inter', sans-serif;
     }
 
     button {
