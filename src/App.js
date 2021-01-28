@@ -5,6 +5,7 @@ import GlobalStyle from './components/GlobalStyle'
 import AboutUs from './pages/AboutUs'
 import OurWork from './pages/OurWork'
 import ContactUs from './pages/ContactUs'
+import MovieDetail from './pages/MovieDetail'
 
 import Nav from './components/Nav'
 
@@ -18,7 +19,8 @@ const App = () => {
       <Nav />
       <Switch>
         <Route exact path="/" component={AboutUs}/>
-        <Route path="/our-work" component={OurWork}/>
+        <Route exact path="/our-work" component={OurWork}/>
+        <Route path="/our-work/:id" component={MovieDetail}/>
         <Route path="/contact-us" component={ContactUs}/>
       </Switch>
     </div>
