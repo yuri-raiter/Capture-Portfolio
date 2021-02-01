@@ -7,11 +7,22 @@ import money from '../img/money.svg'
 import home2 from '../img/home2.png'
 
 import styled from 'styled-components'
+
 import { Wrapper, Description, Image} from '../styles'
+import { useScroll } from './useScroll'
+import { fade } from '../animation'
+
 
 const ServicesSection = () => {
+    const [element, controls] = useScroll()
+
     return (
-        <ServicesWrapper>
+        <ServicesWrapper 
+            variants={fade} 
+            ref={element} 
+            animate={controls} 
+            initial="hidden"
+        >
             <Description>
                 <h2>High <span>quality</span> services</h2>
                 <Cards>
