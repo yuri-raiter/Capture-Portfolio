@@ -2,43 +2,40 @@ import React from 'react'
 
 import styled from 'styled-components'
 import { Wrapper } from '../styles'
+import Toggle from './Toggle'
+import { AnimateSharedLayout } from 'framer-motion'
+
 
 const FaqSection = () => {
     return (
         <Faq>
             <h2>Any questions <span>FAQ</span></h2>
-            <div className="question">
-                <h4>How do I start?</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Daily Schedule.</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Different Payment Methods.</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>What products do you offer.</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
+            <AnimateSharedLayout>
+                <Toggle title="How do I start?">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
+                        </div>
+                </Toggle>
+                <Toggle title="Daily Schedule.">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
+                        </div>
+                </Toggle>
+                <Toggle title="Different Payment Methods.">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
+                        </div>
+                </Toggle>
+                <Toggle title="What products do you offer.">
+                        <div className="answer">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam debitis voluptates magni incidunt ducimus iste maiores est nemo? Quia minus ea facilis amet consequatur illo perferendis voluptatum nemo officiis!</p>
+                        </div>
+                </Toggle>
+            </AnimateSharedLayout>
         </Faq>
     )
 }
@@ -64,7 +61,7 @@ const Faq = styled(Wrapper)`
 
     .question {
         padding: 3rem 0;
-        cursor: pointer
+        cursor: pointer;
     }
 
     .answer {
