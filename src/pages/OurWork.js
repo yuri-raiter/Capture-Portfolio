@@ -11,8 +11,12 @@ import goodtimes from '../img/goodtimes-small.png'
 
 import { motion } from 'framer-motion'
 import { pageAnimation, fade, photoAnimation, lineAnimation, slider, sliderContainer } from '../animation'
+import { useScroll } from '../components/useScroll'
 
 const OurWork = () => {
+    const [element, controls] = useScroll()
+    const [element2, controls2] = useScroll()
+
     return (
         <Work 
             variants={pageAnimation} 
@@ -36,16 +40,16 @@ const OurWork = () => {
                     </Hide>
                 </Link>
             </Movie>
-            <Movie>
+            <Movie variants={fade} ref={element} animate={controls} initial="hidden">
                 <h2>The Racer</h2>
-                <div className="line"></div>
+                <motion.div variants={lineAnimation} className="line"></motion.div>
                 <Link to="/our-work/the-racer">
                     <img src={theracer} alt="theracer"/>
                 </Link>
             </Movie>
-            <Movie>
+            <Movie variants={fade} ref={element2} animate={controls2} initial="hidden">
                 <h2>Good Times</h2>
-                <div className="line"></div>
+                <motion.div variants={lineAnimation} className="line"></motion.div>
                 <Link to="/our-work/good-times">
                     <img src={goodtimes} alt="goodtimes"/>
                 </Link>
@@ -58,13 +62,14 @@ const Work = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;
+    position: relative;
 
     h2 {
         padding: 1rem 0;
     }
 `
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
     padding-bottom: 10rem;
 
     .line {
@@ -85,11 +90,11 @@ const Hide = styled.div`
 `
 
 export const Frame1 = styled(motion.div)`
-    position: fixed;
+    position: absolute;
     left: 0;
-    top: 10%;
+    top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: #fffebf;
     z-index: 2;
 `
