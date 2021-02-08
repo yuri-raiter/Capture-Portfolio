@@ -8,6 +8,8 @@ import { MovieState } from '../movieState'
 import { motion } from 'framer-motion'
 import { pageAnimation } from '../animation'
 
+import ScrollTop from '../components/ScrollTop'
+
 
 const MovieDetail = () => {
     const { id } = useParams() // the current URL
@@ -43,6 +45,7 @@ const MovieDetail = () => {
                     :
                         <h2>This page doesn't exist</h2>
             }
+            <ScrollTop />
         </>
     )
 }
