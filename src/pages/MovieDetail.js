@@ -56,14 +56,11 @@ const Details = styled(motion.div)`
 
 const HeadLine = styled.div`
     min-height: 90vh;
-    padding-top: 20vh;
-    position: relative;
+    padding-top: 5rem;
+    text-align: center;
 
     h2 {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, -10%);
+        margin-bottom: 2rem;
     }
 
     img {
@@ -79,6 +76,11 @@ const Awards = styled.div`
     margin: 5rem 10rem;
     align-items: center;
     justify-content: space-around;
+
+    @media (max-width: 1500px) {
+        display: block;
+        margin: 2rem;
+    }
 `
 
 const AwardStyle = styled.div`

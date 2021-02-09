@@ -5,6 +5,7 @@ import home1 from '../img/home1.png'
 import { Wrapper, Description, Image, Hide } from '../styles'
 import { motion } from 'framer-motion'
 import { titleAnimation, fade, photoAnimation } from '../animation'
+import { Link } from 'react-router-dom'
 
 import Wave from './Wave' 
 
@@ -26,7 +27,9 @@ const AboutSection = () => {
                     </Hide>
                 </motion.div>
                 <motion.p variants={fade}>Contact us for any photography or videography ideas that you have. We have professionals with amazing skills</motion.p>
-                <motion.button variants={fade}>Contact us</motion.button>
+                <Link to="/contact-us">
+                    <motion.button variants={fade}>Contact us</motion.button>
+                </Link>
             </Description>
             <Image>
                 <motion.img variants={photoAnimation} src={home1} alt="guy with a camera"/>
